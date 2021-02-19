@@ -4,6 +4,8 @@ import NodeEdit from "./NodeEdit";
 import NodeDelete from "./NodeDelete";
 import { getAuthClient } from "../utils/auth";
 const auth = getAuthClient();
+//Configure the site links
+const cmsUrl = 'https://d8lab.gliese.thehubdigital.co';
 
 /**
  * Helper function to validate data retireved from the JSON:API.
@@ -72,7 +74,7 @@ const NodeItem = ({id, drupal_internal__nid, title, body, contentList, updateCon
     // Show just the item.
     return (
       <div>
-        <a href={`/node/${drupal_internal__nid}`}>{title}</a>
+        <a href={`${cmsUrl}/node/${drupal_internal__nid}`}>{title}</a>
         {" -- "}
         <button class="btn btn-info" onClick={handleClick}>
           Edit

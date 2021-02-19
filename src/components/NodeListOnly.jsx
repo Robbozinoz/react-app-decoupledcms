@@ -50,7 +50,7 @@ const NodeListOnly = () => {
       <h2>Site content</h2>
       {content ? (
         <>
-          <label htmlFor="filter">Type to Filter:</label>
+          <label htmlFor="filter">Type to filter:</label>
           <input  
             type='text'
             name='filter'
