@@ -115,14 +115,17 @@ const NodeForm = ({id, title, body, onSuccess}) => {
         </div>
       }
       <form onSubmit={handleSubmit}>
+        <div class="form-group">
         <input
           name="title"
           type="text"
           value={values.title}
           placeholder="Title"
           onChange={handleInputChange}
+          class="form-control"
         />
-        <br/>
+        </div>
+        <div class="form-group">
         <textarea
           name="body"
           rows="4"
@@ -130,12 +133,14 @@ const NodeForm = ({id, title, body, onSuccess}) => {
           value={values.body}
           placeholder="Body"
           onChange={handleInputChange}
+          class="form-control"
         />
-        <br/>
+        </div>
         <input
           name="submit"
           type="submit"
           value={id ? 'Edit existing node' : 'Add new node'}
+          class="btn btn-success"
         />
       </form>
     </div>

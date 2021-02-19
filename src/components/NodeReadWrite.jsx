@@ -49,17 +49,15 @@ const NodeItem = ({id, drupal_internal__nid, title, body, contentList, updateCon
     if (showAdminOptions) {
       return (
         <div>
-          <hr/>
-          Admin options for {title}
+          Admin options for: {title}
           <NodeEdit
             id={id}
             title={title}
             body={body.value}
             onSuccess={onEditSuccess}
           />
-          <hr/>
-          <button onClick={handleClick}>
-            cancel
+          <button class="btn btn-warning" onClick={handleClick}>
+            Cancel
           </button>
           <NodeDelete
             id={id}
@@ -76,8 +74,8 @@ const NodeItem = ({id, drupal_internal__nid, title, body, contentList, updateCon
       <div>
         <a href={`/node/${drupal_internal__nid}`}>{title}</a>
         {" -- "}
-        <button onClick={handleClick}>
-          edit
+        <button class="btn btn-info" onClick={handleClick}>
+          Edit
         </button>
       </div>
     );
@@ -140,13 +138,16 @@ return (
     <h2>Site content from the Decoupled App</h2>
     {content.length ? (
         <>
-        <label htmlFor="filter">Type to filter:</label>
-        <input
-            type="text"
-            name="filter"
-            placeholder="Start typing ..."
-            onChange={(event => setFilter(event.target.value.toLowerCase()))}
-        />
+        <div class="form-group">
+          <label htmlFor="filter">Type to filter:</label>
+          <input
+              type="text"
+              name="filter"
+              placeholder="Start typing ..."
+              onChange={(event => setFilter(event.target.value.toLowerCase()))}
+              class="form-control"
+          />
+        </div>
         <hr/>
         {
             // If there's a `filter` apply it to the list of nodes.
@@ -190,7 +191,7 @@ return (
     ) : (
         <p>
         Don't see what you're looking for?
-        <button onClick={() => setShowNodeAdd(true)}>Add a node</button>
+        <button class="addBtn btn btn-success" onClick={() => setShowNodeAdd(true)}>Add a node</button>
         </p>
     )}
     </div>

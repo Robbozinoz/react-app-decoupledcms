@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchWithAuthentication } from "../utils/fetch";
+//import { fetchWithAuthentication } from "../utils/fetch";
 import { getAuthClient } from "../utils/auth";
 const auth = getAuthClient();
 
@@ -38,7 +38,7 @@ const NodeDelete = ({ id, title, onSuccess }) => {
   }
 
   return (
-    <button onClick={event => doConfirm() && doDelete()}>
+    <button class="btn btn-danger" onClick={event => doConfirm() && doDelete()}>
       delete
     </button>
   );

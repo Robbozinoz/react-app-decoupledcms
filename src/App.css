@@ -39,10 +39,10 @@
 
 /*Form styles*/
 #root {
-  border: 1px solid #000;
   margin: 1em auto;
-  max-width: 600px;
+  max-width: 90vw;
   padding: 1em;
+  background-color: #F8F8F8;
 }
 
 hr {
@@ -57,10 +57,4 @@ input, textarea, button {
 
 input[type="submit"] {
   padding: 0.5em;
-}
-
-button:hover,
-input[type="submit"]:hover {
-  border-color: yellowgreen;
-  cursor: pointer;
 }

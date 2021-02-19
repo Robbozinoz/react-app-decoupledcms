@@ -50,7 +50,7 @@ const LoginForm = () => {
     return(
       <div>
         <p>You're currently logged in.</p>
-        <button onClick={() => auth.logout().then(setLoggedIn(false))}>
+        <button class="btn btn-success" onClick={() => auth.logout().then(setLoggedIn(false))}>
           Logout
         </button>
       </div>
@@ -74,27 +74,34 @@ const LoginForm = () => {
         </div>
       }
       <form onSubmit={handleSubmit}>
-        <input
-          name="name"
-          type="text"
-          value={values.name}
-          placeholder="Username"
-          onChange={handleInputChange}
-        />
-        <br/>
-        <input
-          name="pass"
-          type="text"
-          value={values.pass}
-          placeholder="Password"
-          onChange={handleInputChange}
-        />
-        <br/>
-        <input
-          name="submit"
-          type="submit"
-          value="Login"
-        />
+          <div class="form-group">
+            <input
+              name="name"
+              type="text"
+              value={values.name}
+              placeholder="Username"
+              onChange={handleInputChange}
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              name="pass"
+              type="text"
+              value={values.pass}
+              placeholder="Password"
+              onChange={handleInputChange}
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              name="submit"
+              type="submit"
+              value="Login"
+              class="btn btn-primary"
+            />
+          </div>
       </form>
     </div>
   );
