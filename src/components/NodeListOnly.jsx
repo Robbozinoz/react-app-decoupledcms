@@ -60,14 +60,23 @@ const NodeListOnly = () => {
           <hr/>
           {
             content.filter((item) => {
-              if (!filter) {
-                return item;
+              //{/* if (!filter) {
+                //return item;
+              //}
+
+              //if (filter && (item.attributes.title.toLowerCase().includes(filter) || item.attributes.body.value.toLowerCase().includes(filter))) {
+               // return item;
+              //}
+           // }).map((item) => <NodeItem key={item.id} {...item.attributes}/>) */}
+
+            if (filter) {
+                const title = item.attributes.title ? item.attributes.title.toLowerCase() : '';
+                const body = item.attributes.body ? item.attributes.body.value.toLowerCase() : '';
+                return (title.includes(filter) || body.includes(filter)) ? item : false;
               }
 
-              if (filter && (item.attributes.title.toLowerCase().includes(filter) || item.attributes.body.value.toLowerCase().includes(filter))) {
-                return item;
-              }
-            }).map((item) => <NodeItem key={item.id} {...item.attributes}/>)
+              return item;
+            }).map((item) => (<NodeItem key={item.id} {...item.attributes}/>))
           }
         </>
       ) : (
